@@ -1,16 +1,11 @@
 require 'player'
 
 describe Player do
-subject(:lexi) { Player.new('Lexi') }
-subject(:emma) { Player.new('Emma') }
+subject(:lexi) { described_class.new('Lexi') }
+subject(:emma) { described_class.new('Emma') }
 
   it 'returns its name' do
     expect(lexi.name).to eq 'Lexi'
-  end
-
-  it 'attack the other player' do
-    expect(emma).to receive(:reduce_hp)
-    lexi.attack(emma)
   end
 
   it 'reduces the HP after attack' do
