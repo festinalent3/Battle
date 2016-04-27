@@ -1,7 +1,3 @@
-# As Player 1,
-# So I can start to win a game of Battle,
-# I want my attack to reduce Player 2's HP
-
 feature 'Hit Points' do
   scenario 'shows Player 2 HP' do
     sign_in_and_play
