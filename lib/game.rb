@@ -18,4 +18,8 @@ class Game
 		@opponent = player_2 if @current_player == player_1
 	end
 
+	def game_over?
+		@player_1.hp == 0 || @player_2.hp == 0 
+	end
+
 end

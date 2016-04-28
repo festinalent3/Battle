@@ -13,6 +13,13 @@ describe Fighter do
   end
 
   it "reduces HP when taking damage" do
-    expect{slasher.receive_damage}.to change { slasher.hp }.by(-2)
+    slasher.receive_damage
+    expect(slasher.hp).to be_within(3).of(20)
+  end
+
+
+  it "can not have hp less than 0" do
+    20.times {slasher.receive_damage}
+    expect(slasher.hp).to eq 0
   end
 end

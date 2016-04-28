@@ -1,12 +1,18 @@
 
 <center>
   <h1><%= @game.current_player.name %> vs. <%= @game.opponent.name %></h1>
-</center>
+
 
 <p><%= @game.current_player.name %>: <%= @game.current_player.hp %> Hit Points</p>
 <p><%= @game.opponent.name %>: <%= @game.opponent.hp %> Hit Points</p>
-
-
+</br>
+</br>
+</br>
+<h3><blink><%= @game.current_player.name %> is ready to rock!</blink></h3>
+</br>
+</br>
+</br>
 <form action="/attack" method="get">
   <input type="submit" value="Scratch">
 </form>
+</center>

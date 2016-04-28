@@ -9,7 +9,8 @@ class Fighter
   end
 
   def receive_damage
-    @hp -= 2
+    @hp -= Random.new.rand(1..3)
+    @hp = 0 if @hp < 0 
   end
 
 

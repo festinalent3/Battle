@@ -12,3 +12,8 @@ def sign_in_and_play_and_scratch
     click_button 'Huzzah mothafucka!'
 		click_button 'Scratch'
 end
+
+def attack_till_death
+		click_button 'Revenge!'
+		click_button 'Scratch'
+end

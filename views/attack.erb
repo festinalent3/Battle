@@ -1,6 +1,38 @@
-<p%><%= @game.current_player.name %> attacks <%= @game.opponent.name  %></p>
-<p>Poor <%= @game.opponent.name %> now only has <%= @game.opponent.hp %> Hit Points</p>
+<head>
+<style>
 
-<form action="/switch_player" method="post">
-  <input type="submit" value="Revenge!">
-</form>
+body {
+ background: url(http://i942.photobucket.com/albums/ad266/Webkinz1013/i282967154_81634.gif) no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+
+</style>
+</head>
+<body>
+  <center>
+
+
+    <div>
+      <h2><%= @game.current_player.name %> attacks <%= @game.opponent.name  %>!</h2>
+    </div>
+
+    <div>
+      <img src="http://i.giphy.com/ee5tryZZI9lvi.gif" height="300px">
+    </div>
+
+    <div>
+      <p>Poor <%= @game.opponent.name %> now only has <%= @game.opponent.hp %> Hit Points</p>
+
+      <form action="/switch_player" method="post">
+        <input type="submit" value="Revenge!">
+      </form>
+
+    </div>
+
+
+
+  </center>
+</body>
