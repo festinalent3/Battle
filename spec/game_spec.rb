@@ -18,4 +18,11 @@ describe Game do
     game.attack(mittens)
   end
 
+  it 'switches turn' do
+    game.switch_turn
+    expect(game.current_player).to eq mittens
+    expect(game.opponent).to eq slasher
+
+  end
+
 end

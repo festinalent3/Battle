@@ -1,10 +1,10 @@
 
 <center>
-  <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+  <h1><%= @game.current_player.name %> vs. <%= @game.opponent.name %></h1>
 </center>
 
-<p><%= @game.player_1.name %>: <%= @game.player_1.hp %> Hit Points</p>
-<p><%= @game.player_2.name %>: <%= @game.player_2.hp %> Hit Points</p>
+<p><%= @game.current_player.name %>: <%= @game.current_player.hp %> Hit Points</p>
+<p><%= @game.opponent.name %>: <%= @game.opponent.hp %> Hit Points</p>
 
 
 <form action="/attack" method="get">

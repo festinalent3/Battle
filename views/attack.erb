@@ -1,2 +1,6 @@
-<p%><%= @game.player_1.name %> attacks <%= @game.player_2.name  %></p>
-<p>Poor <%= @game.player_2.name %> now only has <%= @game.player_2.hp %> Hit Points</p>
+<p%><%= @game.current_player.name %> attacks <%= @game.opponent.name  %></p>
+<p>Poor <%= @game.opponent.name %> now only has <%= @game.opponent.hp %> Hit Points</p>
+
+<form action="/switch_player" method="post">
+  <input type="submit" value="Revenge!">
+</form>
