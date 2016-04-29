@@ -4,31 +4,33 @@ require './lib/game'
 
 class Battle < Sinatra::Base
 
+  before do
+    @game = Game.instance
+  end
+
   #start the game
   get '/' do
     erb :index
   end
 
   post '/names' do
-    $game = Game.new Fighter.new(params[:player_1_name]), Fighter.new(params[:player_2_name])
+    @game = Game.create Fighter.new(params[:player_1_name]), Fighter.new(params[:player_2_name])
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
     erb :play
   end
 
   #attacking
   get '/attack' do
-    $game.attack($game.opponent)
-    @game = $game
-    return erb :attack unless $game.game_over?
-    return redirect '/death' if $game.game_over?
+    @game.attack(@game.opponent)
+    return erb :attack unless @game.game_over?
+    return redirect '/death' if @game.game_over?
   end
 
   post '/switch_player' do
-    $game.switch_turn
+    @game.switch_turn
     redirect '/play'
   end
 

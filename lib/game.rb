@@ -8,6 +8,7 @@ class Game
 		@opponent = player_2
 	end
 
+
 	def attack opponent
 		opponent.receive_damage
 	end
@@ -19,7 +20,17 @@ class Game
 	end
 
 	def game_over?
-		@player_1.hp == 0 || @player_2.hp == 0 
+		@player_1.hp == 0 || @player_2.hp == 0
 	end
+
+
+	def self.create(player_1, player_2)
+		@game = Game.new(player_1, player_2)
+	end
+
+	def self.instance
+		@game
+	end
+
 
 end
